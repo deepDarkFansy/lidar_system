@@ -1,0 +1,27 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/home/nvidia/catkin_ws/devel/include",
+                "/home/nvidia/Downloads/ws_livox/devel/include",
+                "/opt/ros/melodic/include",
+                "/home/nvidia/catkin_ws/src/beginner_turtorials/include",
+                "/home/nvidia/catkin_ws/src/learning_tf/include",
+                "/home/nvidia/catkin_ws/src/lidar_system/include",
+                "/usr/include",
+                "/usr/include/pcl-1.8",
+                "/usr/include/eigen3"
+            ],
+            "name": "Linux",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/clang-7",
+            "cStandard": "c11",
+            "cppStandard": "c++14"
+        }
+    ],
+    "version": 4
+}

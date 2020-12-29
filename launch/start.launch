@@ -1,0 +1,19 @@
+<launch>
+    <include file="$(find livox_ros_driver)/launch/livox_lidar_msg.launch" />
+
+    <node pkg="lidar_system" type="recive_data" name="livox_repub" />
+
+    <node pkg="lidar_system" type="transform_data" name="transform_data" />
+
+    <node pkg="lidar_system" type="cluster_data" name="cluster_node" output="screen"/>
+
+    <node pkg="lidar_system" type="image_ui" name="opencv_app" output="screen"/> 
+
+    <arg name="rviz_enable" value="true" />
+
+    <group if="$(arg rviz_enable)" >
+        <node pkg="rviz" type="rviz" name="rviz" respawn="true"
+             args="-d $(find lidar_system)/rviz/test.rviz" />
+    </group>
+
+</launch>
