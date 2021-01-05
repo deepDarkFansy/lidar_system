@@ -41,6 +41,13 @@
 
 typedef pcl::PointXYZINormal PointType;
 typedef pcl::PointCloud<PointType> PointCloudXYZI;
+
+
+#define NO_STOP 3397
+#define NO_SLOW 3398
+#define NO_NORMAL 3399
+
+
 inline double rad2deg(double radians) { return radians * 180.0 / M_PI; }
 
 inline double deg2rad(double degrees) { return degrees * M_PI / 180.0; }

@@ -9,6 +9,8 @@
 
     <node pkg="lidar_system" type="image_ui" name="opencv_app" output="screen"/> 
 
+    <node pkg="lidar_system" type="tcp_info" name="tcp_info" output="screen"/>
+
     <arg name="rviz_enable" value="true" />
 
     <group if="$(arg rviz_enable)" >

@@ -133,10 +133,10 @@ void Cluster::clusterCbk(const sensor_msgs::PointCloud2ConstPtr &msg)
     }
 
 
-    // ROS_INFO("points: %d", cloud_t->points.size());
+    
 
 
-    if(cloud_t->points.size() < 200){
+    if(cloud_t->points.size() < 80){
         my_line_list.header.stamp = msg->header.stamp;
         my_line_list.header.frame_id = "trans";
         my_line_list.color.a = 0;
@@ -167,8 +167,8 @@ void Cluster::clusterCbk(const sensor_msgs::PointCloud2ConstPtr &msg)
     DBSCANSimpleCluster<pcl::PointXYZRGB> ec;
 
     ec.setCorePointMinPts(20);
-    ec.setClusterTolerance(0.3);
-    ec.setMinClusterSize(150);
+    ec.setClusterTolerance(1);
+    ec.setMinClusterSize(40);
     ec.setMaxClusterSize(25000);
     ec.setSearchMethod(tree);
     ec.setInputCloud(cloud_t);
@@ -177,6 +177,7 @@ void Cluster::clusterCbk(const sensor_msgs::PointCloud2ConstPtr &msg)
     pcl::PointXYZRGB min_t, max_t;
 
     if(cluster_indices.size() == 0){
+        ROS_INFO("points: %d", cloud_t->points.size());
         my_line_list.header.stamp = msg->header.stamp;
         my_line_list.header.frame_id = "trans";
         my_line_list.color.a = 0;

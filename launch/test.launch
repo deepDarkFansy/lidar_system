@@ -1,0 +1,10 @@
+<launch>
+
+    <arg name="rviz_enable" value="true" />
+
+    <group if="$(arg rviz_enable)" >
+        <node pkg="rviz" type="rviz" name="rviz" respawn="true"
+             args="-d $(find lidar_system)/rviz/test.rviz" />
+    </group>
+
+</launch>

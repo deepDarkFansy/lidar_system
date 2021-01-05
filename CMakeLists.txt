@@ -82,3 +82,11 @@ target_link_libraries(image_ui
   ${OpenCV_LIBS}
   ${Eigen3_LIBRARIES}
 )
+
+add_executable(tcp_info src/tcp_info/tcp_info.cpp src/tcp_info/main.cpp)
+target_link_libraries(tcp_info
+  ${catkin_LIBRARIES}
+  ${PCL_LIBRARIES}
+  ${OpenCV_LIBS}
+  ${Eigen3_LIBRARIES}
+)
