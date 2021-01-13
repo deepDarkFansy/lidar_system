@@ -93,7 +93,7 @@ void Image_ui::infoCbk(const std_msgs::Int32ConstPtr &msgs)
 {
     
     auto data = msgs->data;
-    ROS_INFO("%d", data);
+    // ROS_INFO("%d", data);
     if(data == NO_NORMAL){
         info = "normal";
     }else if(data == NO_SLOW){
