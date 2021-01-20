@@ -83,8 +83,8 @@ target_link_libraries(image_ui
   ${Eigen3_LIBRARIES}
 )
 
-add_executable(tcp_info src/tcp_info/tcp_info.cpp src/tcp_info/main.cpp)
-target_link_libraries(tcp_info
+add_executable(state_controler src/state_controler/state_controler.cpp src/state_controler/main.cpp)
+target_link_libraries(state_controler
   ${catkin_LIBRARIES}
   ${PCL_LIBRARIES}
   ${OpenCV_LIBS}

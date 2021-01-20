@@ -9,7 +9,7 @@
 
     <node pkg="lidar_system" type="image_ui" name="opencv_app" output="screen"/> 
 
-    <node pkg="lidar_system" type="tcp_info" name="tcp_info" output="screen"/>
+    <node pkg="lidar_system" type="state_controler" name="state_controler" output="screen"/>
 
     <arg name="rviz_enable" value="true" />
 

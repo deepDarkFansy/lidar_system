@@ -43,9 +43,18 @@ typedef pcl::PointXYZINormal PointType;
 typedef pcl::PointCloud<PointType> PointCloudXYZI;
 
 
-#define NO_STOP 3397
-#define NO_SLOW 3398
-#define NO_NORMAL 3399
+enum state_my{
+    ST_STOP = 3397,
+    ST_WAIT,
+    ST_ACTIVE
+};
+
+enum signal{
+    SI_START = 1001,
+    SI_RESTART,
+    SI_WAIT,
+    SI_STOP
+};
 
 
 inline double rad2deg(double radians) { return radians * 180.0 / M_PI; }

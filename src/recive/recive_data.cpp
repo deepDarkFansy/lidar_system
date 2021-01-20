@@ -13,8 +13,9 @@ void Reciver::initPublisher(){
 
 
 void Reciver::initSubscriber(){
-    sub_livox_msg = node.subscribe<livox_ros_driver::CustomMsg>(
-      "/livox/lidar", 100, &Reciver::LivoxMsgCbk, this);
+    sub_enable = node.subscribe<std_msgs::Int32>(
+        "/state", 100, &Reciver::EnableCbk, this
+    );
 }
 
 
@@ -60,3 +61,15 @@ void Reciver::LivoxMsgCbk(const livox_ros_driver::CustomMsgConstPtr& livox_msg_i
     livox_data.clear();
 }
 
+
+void Reciver::EnableCbk(const std_msgs::Int32ConstPtr& msgs){
+    int data = msgs->data;
+
+    if(data == ST_ACTIVE){
+        sub_livox_msg = node.subscribe<livox_ros_driver::CustomMsg>(
+            "/livox/lidar", 100, &Reciver::LivoxMsgCbk, this
+        );
+    }else{
+        sub_livox_msg.shutdown();
+    }  
+}

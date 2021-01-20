@@ -11,17 +11,23 @@
 #include <cstdlib>
 #include <errno.h>
 
-class TcpInfo
+
+
+class State
 {
 private:
     ros::NodeHandle node;
     ros::Publisher pub;
+    ros::Subscriber sub;
+    state_my state;
 public:
-    TcpInfo(ros::NodeHandle &node);
-    ~TcpInfo(){}
+    State(ros::NodeHandle &node);
+    ~State(){}
 
     void initPublisher();
-    
 
+    void initSubscriber();
+    void changeStateCbk(const std_msgs::Int32ConstPtr &msgs);
+    
     void run();
 };
